@@ -5,7 +5,9 @@
       "packages/*"
     ],
     "nohoist": [
+      "**/@expo/",
       "**/expo",
+      "**/expo/**",
       "**/expo-*",
       "**/react",
       "**/react-dom",
@@ -16,14 +18,31 @@
   },
   "license": "MIT",
   "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "pods": "cd packages/my-expo-app && pod-install --quiet && cd ../..",
+    "reset": "yarn reset:node_modules && yarn reset:pods",
+    "reset:node_modules": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
+    "reset:pods": "find . -type dir -name Pods | xargs rm -rf && find . -type f -name Podfile.lock | xargs rm -rf",
     "example:expo": "yarn --cwd packages/my-expo-app",
+    "example:shared-ui": "yarn --cwd packages/my-shared-ui",
     "example:tauri": "yarn --cwd packages/my-tauri-app",
-    "bootstrap": "yarn example:expo && yarn example:tauri",
+    "bootstrap": "yarn && yarn example:expo && yarn example:tauri && yarn example:shared-ui && yarn pods",
     "expo:android": "yarn workspace @tauri-and-expo/expo android",
     "expo:ios": "yarn workspace @tauri-and-expo/expo ios",
     "expo:web": "yarn workspace @tauri-and-expo/expo web",
     "expo:start": "yarn workspace @tauri-and-expo/expo start",
     "tauri:dev": "yarn workspace @tauri-and-expo/tauri dev",
     "tauri:build": "yarn workspace @tauri-and-expo/tauri build:tauri"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.31.0",
+    "@typescript-eslint/parser": "5.31.0",
+    "eslint": "8.20.0",
+    "eslint-config-react": "1.1.7",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-native": "4.0.0",
+    "pod-install": "^0.1.38"
   }
 }
