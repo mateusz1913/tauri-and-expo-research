@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/expo",
+      "**/expo-*",
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native-web",
+      "**/react-native/**"
+    ]
+  },
+  "license": "MIT",
+  "scripts": {
+    "example:expo": "yarn --cwd packages/my-expo-app",
+    "example:tauri": "yarn --cwd packages/my-tauri-app",
+    "bootstrap": "yarn example:expo && yarn example:tauri",
+    "expo:android": "yarn workspace @tauri-and-expo/expo android",
+    "expo:ios": "yarn workspace @tauri-and-expo/expo ios",
+    "expo:web": "yarn workspace @tauri-and-expo/expo web",
+    "expo:start": "yarn workspace @tauri-and-expo/expo start",
+    "tauri:dev": "yarn workspace @tauri-and-expo/tauri dev",
+    "tauri:build": "yarn workspace @tauri-and-expo/tauri build:tauri"
+  }
+}
