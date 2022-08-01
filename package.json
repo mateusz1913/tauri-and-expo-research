@@ -9,6 +9,7 @@
       "**/expo",
       "**/expo/**",
       "**/expo-*",
+      "**/expo-*/**",
       "**/@tauri-apps/**",
       "**/react",
       "**/react-dom",

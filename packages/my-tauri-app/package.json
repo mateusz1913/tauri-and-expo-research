@@ -9,6 +9,7 @@
     "build:tauri": "tauri build"
   },
   "dependencies": {
+    "@shopify/flash-list": "1.2.0",
     "@tauri-and-expo/shared-bl": "*",
     "@tauri-and-expo/shared-ui": "*",
     "@tauri-apps/api": "^1.0.2",

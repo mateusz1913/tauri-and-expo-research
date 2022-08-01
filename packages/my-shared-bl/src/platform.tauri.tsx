@@ -7,8 +7,6 @@ export class PlatformModule implements StaticImplements<PlatformModuleInterface,
     const platformType = await platform();
     const osType = await type();
 
-    console.log('TAURI');
-
     if (osType === 'Darwin') {
       return Promise.resolve({ platform: platformType, os: 'macos' as const });
     }

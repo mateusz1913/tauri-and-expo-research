@@ -6,6 +6,7 @@
   "module": "src",
   "source": "src",
   "devDependencies": {
+    "@shopify/flash-list": "1.2.0",
     "@tauri-and-expo/shared-bl": "*",
     "@types/react": "17",
     "@types/react-native": "0.68.x",
@@ -16,6 +17,7 @@
     "typescript": "4.7.4"
   },
   "peerDependencies": {
+    "@shopify/flash-list": "*",
     "@tauri-and-expo/shared-bl": "*",
     "expo-status-bar": "*",
     "jotai": "*",

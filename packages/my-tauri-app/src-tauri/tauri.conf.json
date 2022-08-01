@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../node_modules/@tauri-apps/cli/schema.json",
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run start",
@@ -12,7 +12,16 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "http": {
+        "request": true,
+        "scope": ["https://jsonplaceholder.typicode.com/photos*"]
+      },
+      "notification": {
+        "all": true
+      },
+      "os": {
+        "all": true
+      }
     },
     "bundle": {
       "active": true,
