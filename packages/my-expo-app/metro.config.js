@@ -28,6 +28,7 @@ const extraNodeModules = modules.reduce((acc, name) => {
   return acc;
 }, {
   '@tauri-and-expo/shared-bl': sharedBLPath,
+  '@tauri-and-expo/shared-ui': sharedUIPath,
 });
 
 module.exports = {
